@@ -4,18 +4,21 @@ OPTION(Global "Global" OFF)
 SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 ADD_LIBRARY(RogEng "${SRC}")
 SET(SRC
-    src/RogEng/RogEng.cpp
-    )
+    src/RogEng/RE.cpp
+    src/RogEng/context.cpp
+    src/RogEng/scene.cpp
+    src/RogEng/entity.cpp)
 SET(PUBLIC_HEADERS
-    src/RogEng/RogEng.hpp
-    )
+    src/RogEng/RE.hpp
+    src/RogEng/context.hpp
+    src/RogEng/scene.hpp
+    src/RogEng/entity.hpp
+    src/RogEng/core.hpp)
 SET(MAIN_HEADER
-    src/RogEng.hpp
-    )
+    src/RogEng.hpp)
 TARGET_SOURCES(RogEng PRIVATE
     ${SRC}
-    ${PUBLIC_HEADERS}
-    )
+    ${PUBLIC_HEADERS})
 SET_TARGET_PROPERTIES(RogEng
     PROPERTIES PUBLIC_HEADER ${PUBLIC_HEADERS}
     ARCHIVE_OUTPUT_DIRECTORY lib)
