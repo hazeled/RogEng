@@ -9,8 +9,7 @@ namespace RE {
 class Scene {
 public:
   Scene();
-  RE_::EntityManager* EntityManager;
-
+  RE_::EntityManager EntityManager;
 private:
 };
 } // namespace RE

@@ -1,3 +1,5 @@
 #include "scene.hpp"
 
-RE::Scene::Scene() {}
+RE::Scene::Scene() {
+  EntityManager = RE_::EntityManager();
+}
