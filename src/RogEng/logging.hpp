@@ -3,9 +3,8 @@
 namespace RE {
 namespace Log {
 enum Level { DEBUG = 0, INFO, WARNING, FATAL };
-void SetLogToFile(bool LogToFile);
-void SetLogToStdout(bool LogToStdout);
-void SetMinLogLevel(RE::Log::Level MinLevel);
+void SetLogging(int logging);
+void SetMinLogLevel(RE::Log::Level level);
 } // namespace Log
 } // namespace RE
 
@@ -14,9 +13,9 @@ namespace Log {
 // You probably won't need to use this, you should most likely use a define
 // Formats with vsprintf
 void Log(RE::Log::Level level,
-         const char*    source,  // File source, usually __FILE__
-         int            linenum, // Line number, usually __LINE__
-         const char*    fmt, ...);
+         const char*     source,  // File source, usually __FILE__
+         int             linenum, // Line number, usually __LINE__
+         const char*     fmt, ...);
 int  Initialize();
 void Exit();
 } // namespace Log
