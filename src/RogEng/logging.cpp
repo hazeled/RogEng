@@ -12,7 +12,7 @@ namespace {
 bool           LogToFile = false;
 RE::Log::Level MinLevel = RE::Log::Level::DEBUG;
 const char*    LogLevelNames[] = {"DEBUG", "INFO", "WARNING", "FATAL"};
-} // namespace
+}
 
 const char* LogLevelToName_(RE::Log::Level level) {
   return LogLevelNames[level];
@@ -28,7 +28,7 @@ void RE_::Log::Log(RE::Log::Level level, const char* source, int linenum,
   va_list args;
   va_start(args, fmt);
   fmt::print("[ {} {}:{} ] ", LogLevelToName_(level),
-             GetFileName_(source).c_str(), linenum);
+             GetFileName_(source), linenum);
   std::vprintf(fmt, args);
   va_end(args);
 }
