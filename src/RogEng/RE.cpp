@@ -1,2 +1,5 @@
 #include "RE.hpp"
-#include <iostream>
+
+int RE::Initialize() { return RE_::Log::Initialize(); }
+
+void RE::Exit() { RE_::Log::Exit(); }
