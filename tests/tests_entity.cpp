@@ -4,12 +4,10 @@
 
 TEST_CASE("ECS entity id", "[entity]") {
   RE_::EntityManager ecs = RE_::EntityManager();
-  RE::EntityId       e = ecs.CreateEntity();
-  RE::EntityId       e1 = ecs.CreateEntity();
-  RE::EntityId       e2 = ecs.CreateEntity();
-  REQUIRE(e == 0);  // First entity, id should be 0
-  REQUIRE(e1 == 1); // First entity, id should be 0
-  REQUIRE(e2 == 2); // First entity, id should be 0
+  RE::EntityId       entity0 = ecs.CreateEntity();
+  RE::EntityId       entity1 = ecs.CreateEntity();
+  REQUIRE(entity0 == 0); // First entity, id should be 0
+  REQUIRE(entity1 == 1); // Second entity, id should be 1
 }
 
 TEST_CASE("ECS entity assignement", "[entity]") {
