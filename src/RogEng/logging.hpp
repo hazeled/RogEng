@@ -3,7 +3,10 @@
 namespace RE {
 namespace Log {
 enum Level { DEBUG = 0, INFO, WARNING, FATAL };
-void SetLogging(int logging);
+/**************************************************
+ * Toggle logging program-wide. SetLogging(false) will disable logging
+ */
+void SetLogging(bool logging);
 void SetMinLogLevel(RE::Log::Level level);
 } // namespace Log
 } // namespace RE
@@ -13,9 +16,9 @@ namespace Log {
 // You probably won't need to use this, you should most likely use a define
 // Formats with vsprintf
 void Log(RE::Log::Level level,
-         const char*     source,  // File source, usually __FILE__
-         int             linenum, // Line number, usually __LINE__
-         const char*     fmt, ...);
+         const char*    source,  // File source, usually __FILE__
+         int            linenum, // Line number, usually __LINE__
+         const char*    fmt, ...);
 int  Initialize();
 void Exit();
 } // namespace Log

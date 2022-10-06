@@ -9,10 +9,10 @@
 #include <string>
 
 namespace {
-bool           LogToFile = false;
-RE::Log::Level MinLevel = RE::Log::Level::DEBUG;
+RE::Log::Level minLevel = RE::Log::Level::DEBUG;
+bool           logging = true;
 const char*    LogLevelNames[] = {"DEBUG", "INFO", "WARNING", "FATAL"};
-}
+} // namespace
 
 const char* LogLevelToName_(RE::Log::Level level) {
   return LogLevelNames[level];
@@ -22,13 +22,13 @@ std::string GetFileName_(const char* path) {
 };
 void RE_::Log::Log(RE::Log::Level level, const char* source, int linenum,
                    const char* fmt, ...) {
-  if (level <= MinLevel) {
+  if (level <= minLevel || !logging) {
     return;
   }
   va_list args;
   va_start(args, fmt);
-  fmt::print("[ {} {}:{} ] ", LogLevelToName_(level),
-             GetFileName_(source), linenum);
+  fmt::print("[{}:{}] ({}) ", GetFileName_(source), linenum,
+             LogLevelToName_(level));
   std::vprintf(fmt, args);
   va_end(args);
 }
