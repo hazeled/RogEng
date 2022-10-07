@@ -21,4 +21,7 @@ For building, RogEng requires the latest version of [SFML](https://github.com/SF
 It is HEAVILY reccomended to use [LLVM](https://github.com/llvm/llvm-project)'s clang to compile. If you choose not to, you can exclude `-DCMAKE_CXX_COMPILER=clang++` from the build commands.
 
 ### Tests
-To build tests, add `-DBUILD_TESTS=On` to cmake. They will be compiled to the `tests` folder inside the build directory.
+To build tests, pass `-DBUILD_TESTS=ON` as an argument to cmake. They will be compiled to the `tests` folder inside the build directory.
+
+### Samples
+To build samples, pass `-DBUILD_SAMPLES=ON` as an argument to cmake. They will be compiled to the `samples` folder inside the build directory.
