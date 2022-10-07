@@ -18,8 +18,7 @@ SET(PUBLIC_HEADERS
     src/RogEng/entity.hpp
     src/RogEng/core.hpp
     src/RogEng/logging.hpp)
-SET(MAIN_HEADER
-    src/RogEng.hpp)
+SET(MAIN_HEADER src/RogEng.hpp)
 ADD_LIBRARY(RogEng "${SRC}")
 TARGET_SOURCES(RogEng PRIVATE
     ${SRC}
